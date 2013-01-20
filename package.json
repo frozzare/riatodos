@@ -1,0 +1,20 @@
+{
+  "name": "Krux",
+  "version": "0.0.1",
+  "author": "Fredrik Forsmo <fredrik.forsmo@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/frozzare/riaprojekt2013.git"
+  },
+  "jam": {
+    "packageDir": "public/js/vendor",
+    "baseUrl": "main",
+    "dependencies": {
+      "backbone": null
+    }
+  },
+  "devDependencies": {
+    "requirejs" : ">= 2.1.0",
+    "jshint" : ">= 0.8.0"
+  }
+}
