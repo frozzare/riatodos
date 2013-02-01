@@ -13,19 +13,18 @@ define(['jquery', 'underscore', 'backbone'], function ($, _, Backbone) {
     },
     
     index: function () {
-      $(document.body).html('index');
+
     },
   
     lists: function () {
-      $(document.body).html('lists');
+
     },
     
     list: function (id) {
-      $(document.body).html('list ' + id);
+
     }
   
   });
-  
   
   return Router;
 });

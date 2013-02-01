@@ -1,1 +1,80 @@
-hej
+/* Reset */
+/* line 2, ../../scss/_reset.scss */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* line 11, ../../scss/_reset.scss */
+body {
+  line-height: 1;
+}
+
+/* line 15, ../../scss/_reset.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 19, ../../scss/_reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 24, ../../scss/_reset.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../scss/_reset.scss */
+q, blockquote {
+  quotes: none;
+}
+
+/* line 35, ../../scss/_reset.scss */
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+/* line 42, ../../scss/_reset.scss */
+blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 48, ../../scss/_reset.scss */
+a img {
+  border: none;
+}
+
+/* line 52, ../../scss/_reset.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 56, ../../scss/_reset.scss */
+section, header, footer, nav, article, aside, figure {
+  display: block;
+  width: 100%;
+}
+
+/* line 61, ../../scss/_reset.scss */
+mark, time, meter, progress {
+  display: inline;
+}
+
+/* Aside left */
+/* line 2, ../../scss/_layout.scss */
+aside.left {
+  width: 200px;
+  background: black;
+  height: 100%;
+  position: absolute;
+}

@@ -28,7 +28,8 @@
   created: Date,
   created_by: User
   subtasks: SubTaskCollection,
-  notes: NoteCollection
+  notes: NoteCollection,
+  completed: Bool
 }
 
 ## Subtask
@@ -38,7 +39,8 @@
   title: String,
   due_date: Date,
   created: Date,
-  created_by: User
+  created_by: User,
+  completed: Bool
 }
 
 ## Note

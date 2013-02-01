@@ -1,0 +1,8 @@
+aside {
+  &.left {
+    width: $asideLeftWidth;
+    background: $asideLeftBackground;
+    height: 100%;
+    position: absolute;
+  }
+}

@@ -6,3 +6,6 @@ jshint:
 build:
 	touch public/js/build.js
 	@node_modules/.bin/r.js -o public/js/build.js
+	
+watch:
+	compass watch

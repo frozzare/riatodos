@@ -1,4 +1,10 @@
-define(['jquery', 'underscore', 'backbone', 'router'], function ($, _, Backbone, Router) {
+define([
+  'jquery',
+  'underscore',
+  'backbone',
+  'router'
+  ],
+  function ($, _, Backbone, Router, Task, TaskCollection) {
   
   /**
    * Declare variables.
@@ -14,6 +20,9 @@ define(['jquery', 'underscore', 'backbone', 'router'], function ($, _, Backbone,
     var router = new Router();
     Backbone.history.start({ pushState: false });
   };
+  
+  window.TaskCollection = TaskCollection;
+  window.Task = Task;
   
   return App;
 });
