@@ -10,7 +10,10 @@ define(['jquery', 'underscore', 'backbone', 'router'], function ($, _, Backbone,
    * App initalize
    */
   
-  App.initalize = function () {};
+  App.initalize = function () {
+    var router = new Router();
+    Backbone.history.start({ pushState: false });
+  };
   
   return App;
 });
