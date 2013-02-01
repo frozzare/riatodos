@@ -1996,7 +1996,7 @@ var jam = {
     "packages": [
         {
             "name": "backbone",
-            "location": "../public/js/vendor/backbone",
+            "location": "../public/js/vendor",
             "main": "backbone.js"
         },
         {
@@ -2030,7 +2030,7 @@ if (typeof require !== "undefined" && require.config) {
     "packages": [
         {
             "name": "backbone",
-            "location": "../public/js/vendor/backbone",
+            "location": "../public/js/vendor",
             "main": "backbone.js"
         },
         {
@@ -2063,7 +2063,7 @@ else {
     "packages": [
         {
             "name": "backbone",
-            "location": "../public/js/vendor/backbone",
+            "location": "../public/js/vendor",
             "main": "backbone.js"
         },
         {
