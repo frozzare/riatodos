@@ -74,7 +74,25 @@ mark, time, meter, progress {
 /* line 2, ../../scss/_layout.scss */
 aside.left {
   width: 200px;
-  background: black;
+  background: white;
+  color: black;
+  border-right: 1px solid #ededed;
   height: 100%;
   position: absolute;
+}
+/* line 9, ../../scss/_layout.scss */
+aside.left .module {
+  width: 100%;
+  margin-bottom: 20px;
+  clear: both;
+}
+/* line 13, ../../scss/_layout.scss */
+aside.left .module .inner {
+  padding: 5px 10px;
+}
+
+/* line 6, ../../scss/_base.scss */
+h1 {
+  font-size: bold;
+  font-family: "Helvetica", "Georgia", "Times New Roman", serif;
 }

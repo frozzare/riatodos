@@ -1,4 +1,8 @@
-define(['jquery', 'underscore', 'backbone', 'collections/subtask'], function ($, _, Backbone, SubTaskCollection) {
+define([
+  'jquery',
+  'underscore',
+  'backbone'
+], function ($, _, Backbone) {
 
   /**
    * Initalize Subtask model

@@ -2,7 +2,19 @@ aside {
   &.left {
     width: $asideLeftWidth;
     background: $asideLeftBackground;
+    color: $asideLeftColor;
+    border-right: $asideLeftBorderRightSize solid $asideLeftBorderRightColor;
     height: 100%;
     position: absolute;
+    .module {
+      width: 100%;
+      margin-bottom: 20px;
+      clear: both;
+      .inner {
+        padding: 5px 10px;
+      }
+      .header {
+      }
+    }
   }
 }

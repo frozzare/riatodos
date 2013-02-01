@@ -3,8 +3,8 @@ define([
   'underscore',
   'backbone',
   'router'
-  ],
-  function ($, _, Backbone, Router, Task, TaskCollection) {
+],function ($, _, Backbone, Router, Task, TaskCollection) {
+
   /**
    * Declare variables.
    */
@@ -20,9 +20,6 @@ define([
     Backbone.history.start({ pushState: false });
   };
   
-  window.Backbone = Backbone;
-  window.TaskCollection = TaskCollection;
-  window.Task = Task;
-  
   return App;
+  
 });

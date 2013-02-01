@@ -1,4 +1,9 @@
-define(['jquery', 'underscore', 'backbone', 'collections/subtask'], function ($, _, Backbone, SubTaskCollection) {
+define([
+  'jquery',
+  'underscore',
+  'backbone',
+  'collections/subtask'
+], function ($, _, Backbone, SubTaskCollection) {
 
   /**
    * Initalize Backbone Router
