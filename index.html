@@ -15,14 +15,8 @@
           <h1>Todo's</h1>
         </div>
         <div class="inner">
-          <ul>
-            <li><a href="#">Open Source</a> <span class="count">0</span></li>
-            <li><a href="#">Isotop</a> <span class="count">1</span></li>
-            <li><a href="#">Scouterna</a> <span class="count">5</span></li>
-            <li><a href="#">Lectures</a> <span class="count">10</span></li>
-            <li><a href="#">Learning</a> <span class="count">0</span></li>
-            <li><a href="#">Länkar!</a> <span class="count">50</span></li>
-            <li><a href="#">tire.js</a> <span class="count">7</span></li>
+          <ul id="lists">
+            <!--<li><a href="#">Open Source</a> <span class="count">0</span></li>-->
           </ul>
         </div>
       </div>
@@ -30,17 +24,18 @@
         <div class="inner">
           <ul>
             <li>
-              <a class="show-modal" href="#" data-modal="add-new-list">Add new list</a>
+              <a class="show-moda2l add-new-list" href="#" data-modal="add-new-list">Add new list</a>
             </li>
           </ul>
         </div>
       </div>
     </aside>
     <div id="modal-add-new-list" class="modal">
-      Add new list modal
+      <h1>Add new list modal</h1>
+      <input type="text" id="list-title" />
       <a class="hide-modal" href="#" data-modal="add-new-list">Hide</a>
     </div>
   </section>
-  <script data-main="js/config.js" src="js/vendor/require.js"></script>
+  <script data-main="js/main.js" src="js/vendor/require.js"></script>
 </body>
 </html>

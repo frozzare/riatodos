@@ -1,14 +1,15 @@
 define([
   'jquery',
   'underscore',
-  'backbone'
-], function ($, _, Backbone) {
+  'backbone',
+  'models/task'
+], function ($, _, Backbone, TaskModel) {
 
   /**
    * Initalize Subtask model
    */
 
-  var SubTask = Backbone.Model.extend({
+  var SubTask = Backbone.RelationalModel.extend({
 
     defaults: {
       title: '',
@@ -18,11 +19,13 @@ define([
     },
 
     initialize: function () {
-    
-    }
+
+    },
+
+
 
   });
 
   return SubTask;
-  
+
 });

@@ -2,36 +2,55 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'collections/subtask'
-], function ($, _, Backbone, SubTaskCollection) {
+  'collections/subtasks',
+  'models/subtask'
+], function ($, _, Backbone, SubTasksCollection, SubTaskModel) {
 
   /**
-   * Initalize Backbone Router
+   * Initalize Task model
    */
 
-  var Task = Backbone.Model.extend({
-    
+  var Task = Backbone.RelationalModel.extend({
+
     defaults: {
-      title: '',
+      title: 'Empty todo..',
       due_date: null,
       created: +new Date,
       created_by: null,
-      subtasks: [],
-      notes: [],
       completed: false
     },
-    
+
+    relations: [{
+      type: Backbone.HasMany,
+      key: 'subtasks',
+      relatedModel: SubTaskModel,
+      collectionType: SubTasksCollection,
+      reverseRelation: {
+        key: 'subtask',
+        includeInJSON: 'id'
+      }
+    }],
+
     initialize: function () {
-      this.subtasks = new SubTaskCollection();
-      // this.notes = new NoteCollection();
+      if (!this.get('title')) {
+        this.set({
+          title: this.defaults().title
+        });
+      }
     },
-    
+
+    toggle: function () {
+      this.save({
+        completed: !this.get('completed')
+      });
+    },
+
     validate: function (task) {
-      var error = 'Something when\'t wrong';
+      var error = "Something when't wrong";
       if (!task.title) error = 'Title is required';
       return error;
     }
-  
+
   });
 
   return Task;

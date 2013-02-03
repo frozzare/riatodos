@@ -3,28 +3,24 @@ define([
   'underscore',
   'backbone',
   'router',
-  'views/app'
+  'views/appview'
 ],function ($, _, Backbone, Router, AppView) {
 
   /**
    * Declare variables.
    */
-  
+
   var App = {};
-  
+
   /**
    * App initalize
    */
-  
-  App.initalize = function () {
-    var router = new Router()
-      , appView = new AppView();
 
-    console.log(appView);
-      
-    Backbone.history.start({ pushState: false });
+  App.initalize = function () {
+    Router.initialize();
+    var appView = new AppView();
   };
-  
+
   return App;
-  
+
 });

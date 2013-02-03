@@ -1,6 +1,6 @@
 define([
   'backbonePure',
-  'backboneRel',
+  'backboneRelational',
   'backboneLocalStorage'
 ], function(_Backbone) {
   return Backbone.noConflict() && _Backbone;

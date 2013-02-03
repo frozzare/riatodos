@@ -1,30 +1,37 @@
-define(['jquery', 'underscore', 'backbone'], function ($, _, Backbone) {
-  
+define([
+  'jquery',
+  'underscore',
+  'backbone',
+  'collections/lists'
+], function ($, _, Backbone, ListsCollection) {
+
   /**
    * Initalize Backbone Router
    */
-  
+
   var Router = Backbone.Router.extend({
-    
     routes: {
-      '': 'index',
       'lists': 'lists',
-      'list/:id': 'list'
-    },
-    
-    index: function () {
-
-    },
-  
-    lists: function () {
-
-    },
-    
-    list: function (id) {
-
+      'list/:id': 'list',
+      '*actions': 'defaultAction'
     }
-  
   });
-  
-  return Router;
+
+  /**
+   *
+   *
+   */
+
+  var initialize = function () {
+    var router = new Router();
+    window.ListsCollection = ListsCollection;
+    router.on('defaultAction', function (actions) {
+      console.log('Route: ', actions);
+    });
+    Backbone.history.start();
+  };
+
+  return {
+    initialize: initialize
+  };
 });
