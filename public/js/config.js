@@ -6,7 +6,11 @@ require.config({
     
     // Vendors
     
+    // jQuery + plugins
     jquery: 'vendor/jquery/dist/jquery',
+    jqueryModal: 'lib/jquery.modal',
+    
+    // Underscore + Backbone
     underscore: 'vendor/underscore/underscore',
     backboneOld: 'vendor/backbone/backbone',
     backbone: 'vendor/backbone/backbone.all',

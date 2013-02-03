@@ -2,8 +2,9 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'router'
-],function ($, _, Backbone, Router, Task, TaskCollection) {
+  'router',
+  'views/app'
+],function ($, _, Backbone, Router, AppView) {
 
   /**
    * Declare variables.
@@ -16,7 +17,11 @@ define([
    */
   
   App.initalize = function () {
-    var router = new Router();
+    var router = new Router()
+      , appView = new AppView();
+
+    console.log(appView);
+      
     Backbone.history.start({ pushState: false });
   };
   

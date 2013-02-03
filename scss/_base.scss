@@ -2,8 +2,21 @@
 @import 'variables';
 @import 'bourbon/bourbon';
 @import 'layout';
+@import 'modal';
+
+body, p {
+  font-family: 'Vollkorn', Georgia, Times, serif;
+  font-size: 16px;
+  line-height: 25px;
+}
+
+h1,
+aside {
+  font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+}
 
 h1 {
-  font-size: bold;
-  font-family: "Helvetica", "Georgia", "Times New Roman", serif;
+    font-size: 50px;
+    line-height: 65px;
+    font-weight: bold;
 }

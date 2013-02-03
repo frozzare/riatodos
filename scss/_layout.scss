@@ -1,9 +1,13 @@
+body {
+  border-top: 4px solid #000;
+}
+
 aside {
   &.left {
     width: $asideLeftWidth;
     background: $asideLeftBackground;
     color: $asideLeftColor;
-    border-right: $asideLeftBorderRightSize solid $asideLeftBorderRightColor;
+    border-right: $asideLeftBorder;
     height: 100%;
     position: absolute;
     .module {
@@ -11,9 +15,60 @@ aside {
       margin-bottom: 20px;
       clear: both;
       .inner {
-        padding: 5px 10px;
+        ul {
+          li {
+            width: 100%;
+            line-height: 30px;
+            border-bottom: $asideLeftBorder;
+            a {
+              color: $asideLeftColor;
+              text-decoration: none;
+              padding: 10px;
+              font-weight: bold;
+              text-align: left;
+              font-size: 12px;
+              &:hover {
+              }
+            }
+            &:hover {
+              background: $asideLeftMenuHoverBackground;
+              span.count {
+                color: $asideLeftMenuCountHoverColor;
+              }
+            }
+            span.count {
+              float: right;
+              padding-right: 10px;
+              color: $asideLeftMenuColor;
+              text-align: left;
+              font-weight: 300;
+              font-size: 14px;
+            }
+          }
+        }
       }
       .header {
+      }
+      &.top {
+        .header {
+          h1 {
+            color: #dedede;
+            text-align: center;
+          }
+        }
+      }
+      &.bottom {
+        margin-bottom: 0px;
+        bottom: 0;
+        position: absolute;
+        border-top: $asideLeftBorder;
+        ul {
+          li {
+            a {
+              padding-right: 120px
+            }
+          }
+        }
       }
     }
   }

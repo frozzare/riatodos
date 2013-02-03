@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   <title></title>
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
+  <link href="http://fonts.googleapis.com/css?family=Vollkorn" rel="stylesheet" type="text/css">
   <link href="css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -10,12 +12,34 @@
     <aside class="left">
       <div class="module top">
         <div class="header">
-          <h1>My Todo's</h1>
+          <h1>Todo's</h1>
         </div>
         <div class="inner">
+          <ul>
+            <li><a href="#">Open Source</a> <span class="count">0</span></li>
+            <li><a href="#">Isotop</a> <span class="count">1</span></li>
+            <li><a href="#">Scouterna</a> <span class="count">5</span></li>
+            <li><a href="#">Lectures</a> <span class="count">10</span></li>
+            <li><a href="#">Learning</a> <span class="count">0</span></li>
+            <li><a href="#">Länkar!</a> <span class="count">50</span></li>
+            <li><a href="#">tire.js</a> <span class="count">7</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="module bottom">
+        <div class="inner">
+          <ul>
+            <li>
+              <a class="show-modal" href="#" data-modal="add-new-list">Add new list</a>
+            </li>
+          </ul>
         </div>
       </div>
     </aside>
+    <div id="modal-add-new-list" class="modal">
+      Add new list modal
+      <a class="hide-modal" href="#" data-modal="add-new-list">Hide</a>
+    </div>
   </section>
   <script data-main="js/config.js" src="js/vendor/require.js"></script>
 </body>
