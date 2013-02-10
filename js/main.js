@@ -6,14 +6,13 @@ require.config({
 
     // jQuery + plugins
     jquery: 'vendor/jquery/dist/jquery',
-    jqueryModal: 'lib/jquery.modal',
 
     // Underscore + Backbone
     underscore: 'vendor/underscore/underscore',
     backbonePure: 'vendor/backbone/backbone',
     backbone: 'vendor/backbone/backbone.all',
     backboneRelational: 'vendor/backbone/relational',
-    backboneLocalStorage: 'vendor/backbone/localstorage',
+    backboneLocalStorage: 'vendor/backbone/localStorage',
 
     text: 'vendor/requirejs/text',
 

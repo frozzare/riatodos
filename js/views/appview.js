@@ -1,11 +1,10 @@
 define([
   'jquery',
-  'jqueryModal',
   'underscore',
   'backbone',
   'collections/lists',
   'views/listview'
-], function ($, modal, _, Backbone, Lists, ListView) {
+], function ($, _, Backbone, Lists, ListView) {
 
   var AppView = Backbone.View.extend({
 

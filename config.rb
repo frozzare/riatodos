@@ -1,2 +1,2 @@
-css_dir = 'public/css'
+css_dir = 'css'
 sass_dir = 'scss'
