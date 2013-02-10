@@ -12,8 +12,8 @@ define([
     el: 'body',
 
     events: {
-      'click .show-modal': 'showModal',
-      'click .hide-modal': 'hideModal',
+      'click .add-new-list': 'addNewList',
+      'keypress #list-name': 'addList'
     },
 
     /**
@@ -21,6 +21,7 @@ define([
      */
 
     initialize: function () {
+      this.$lists = this.$('#lists');
       this.listenTo(Lists, 'add', this.addOne);
       this.listenTo(Lists, 'reset', this.addAll);
       Lists.fetch();
@@ -39,7 +40,7 @@ define([
 
     addOne: function (list) {
       var view = new ListView({ model: list });
-      this.$('#lists').append(view.render().el);
+      this.$lists.append(view.render().el);
     },
 
     /**
@@ -47,38 +48,33 @@ define([
      */
 
     addAll: function () {
-      this.$('#lists').html('');
+      this.$lists.html('');
       Lists.each(this.addOne, this);
     },
 
     /**
-     * Show modal window.
+     * Append new list input.
      */
 
-    showModal: function (e) {
-      var modal = $(e.target).attr('data-modal');
-      $('#modal-' + modal).modal('show');
+    addNewList: function () {
+      if (this.$lists.find('#list-name').length) return;
+      this.$lists.append('<li><input id="list-name" value="New list" type="text"></li>');
     },
 
     /**
-     * Hide modal window.
+     * Add list on enter key press.
      */
 
-    hideModal: function (e) {
-      var modal = $(e.target).attr('data-modal');
-      $('#modal-' + modal).modal('hide');
-    },
-/*
-    addNewList: function () {
-      $('ul').append('<li><input id="list-name" type="text"></li>');
-    },
-
     addList: function (e) {
+      var elm = $('#list-name')
+        , val = elm.val();
 
-      if (e.which !== 13) return;
-      Lists.create({ title: $('#list-name').val() });
+      if (e.which !== 13 || !val.trim()) return;
+
+      Lists.create({ title: val });
+      elm.parent().remove();
     }
-*/
+
   });
 
 

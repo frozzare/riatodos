@@ -13,3 +13,4 @@ En att göra lista med avancerade funktioner och möjligheten till att samarbeta
 * Egen UI lösning byggd med [SCSS](http://sass-lang.com/) och [Bourbon](http://bourbon.io/). [Compass]() för att bygga allt.
 * [jQuery](http://jquery.com) eller [Tire](http://tirejs.com) för domhantering.
 * [Doxer](http://github.com/frozzare/doxer]) eller [Brocco](http://github.com/frozzare/brocco) för dokumentations presentation. Lutar åt Brocco just nu då Doxer behöver lite mer utveckling för det ska fungera rätt. Forkat Brocco för att fixa JSDoc syntax.
+* Sen blir nog resten egen utvecklade grejer!

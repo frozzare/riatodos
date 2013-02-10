@@ -92,12 +92,22 @@ aside.left .module {
   clear: both;
 }
 /* line 19, ../../scss/_layout.scss */
+aside.left .module .inner ul#lists {
+  overflow-x: scroll;
+}
+/* line 22, ../../scss/_layout.scss */
 aside.left .module .inner ul li {
   width: 100%;
   line-height: 30px;
   border-bottom: 1px solid #ededed;
 }
-/* line 23, ../../scss/_layout.scss */
+/* line 26, ../../scss/_layout.scss */
+aside.left .module .inner ul li input[type="text"] {
+  padding: 3px 55px 3px 5px;
+  margin: 0px 10px;
+  border: 1px #DDD solid;
+}
+/* line 31, ../../scss/_layout.scss */
 aside.left .module .inner ul li a {
   color: black;
   text-decoration: none;
@@ -106,15 +116,31 @@ aside.left .module .inner ul li a {
   text-align: left;
   font-size: 12px;
 }
-/* line 33, ../../scss/_layout.scss */
+/* line 40, ../../scss/_layout.scss */
+aside.left .module .inner ul li a.delete {
+  display: none;
+  float: right;
+  padding: 0px;
+  padding-right: 10px;
+  color: #8C223F;
+  font-weight: 500;
+  text-align: left;
+  font-size: 14px;
+}
+/* line 51, ../../scss/_layout.scss */
 aside.left .module .inner ul li:hover {
   background: #ededed;
 }
-/* line 35, ../../scss/_layout.scss */
+/* line 53, ../../scss/_layout.scss */
 aside.left .module .inner ul li:hover span.count {
   color: #cfcfcf;
+  display: none;
 }
-/* line 39, ../../scss/_layout.scss */
+/* line 57, ../../scss/_layout.scss */
+aside.left .module .inner ul li:hover a.delete {
+  display: block;
+}
+/* line 61, ../../scss/_layout.scss */
 aside.left .module .inner ul li span.count {
   float: right;
   padding-right: 10px;
@@ -123,19 +149,19 @@ aside.left .module .inner ul li span.count {
   font-weight: 300;
   font-size: 14px;
 }
-/* line 54, ../../scss/_layout.scss */
+/* line 76, ../../scss/_layout.scss */
 aside.left .module.top .header h1 {
   color: #dedede;
   text-align: center;
 }
-/* line 60, ../../scss/_layout.scss */
+/* line 82, ../../scss/_layout.scss */
 aside.left .module.bottom {
   margin-bottom: 0px;
   bottom: 0;
   position: absolute;
   border-top: 1px solid #ededed;
 }
-/* line 67, ../../scss/_layout.scss */
+/* line 89, ../../scss/_layout.scss */
 aside.left .module.bottom ul li a {
   padding-right: 120px;
 }

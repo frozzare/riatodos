@@ -15,7 +15,7 @@ require.config({
     backboneRelational: 'vendor/backbone/relational',
     backboneLocalStorage: 'vendor/backbone/localstorage',
 
-    // text: 'vendor/requirejs/text'
+    text: 'vendor/requirejs/text',
 
     // App paths
 
