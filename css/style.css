@@ -1,5 +1,5 @@
 /* Reset */
-/* line 2, ../../scss/_reset.scss */
+/* line 2, ../scss/_reset.scss */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -9,74 +9,74 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   vertical-align: baseline;
 }
 
-/* line 11, ../../scss/_reset.scss */
+/* line 11, ../scss/_reset.scss */
 body {
   line-height: 1;
 }
 
-/* line 15, ../../scss/_reset.scss */
+/* line 15, ../scss/_reset.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 19, ../../scss/_reset.scss */
+/* line 19, ../scss/_reset.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 24, ../../scss/_reset.scss */
+/* line 24, ../scss/_reset.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../scss/_reset.scss */
+/* line 30, ../scss/_reset.scss */
 q, blockquote {
   quotes: none;
 }
 
-/* line 35, ../../scss/_reset.scss */
+/* line 35, ../scss/_reset.scss */
 q:before, q:after {
   content: "";
   content: none;
 }
 
-/* line 42, ../../scss/_reset.scss */
+/* line 42, ../scss/_reset.scss */
 blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 48, ../../scss/_reset.scss */
+/* line 48, ../scss/_reset.scss */
 a img {
   border: none;
 }
 
-/* line 52, ../../scss/_reset.scss */
+/* line 52, ../scss/_reset.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
 
-/* line 56, ../../scss/_reset.scss */
+/* line 56, ../scss/_reset.scss */
 section, header, footer, nav, article, aside, figure {
   display: block;
   width: 100%;
 }
 
-/* line 61, ../../scss/_reset.scss */
+/* line 61, ../scss/_reset.scss */
 mark, time, meter, progress {
   display: inline;
 }
 
 /* Aside left */
-/* line 1, ../../scss/_layout.scss */
+/* line 1, ../scss/_layout.scss */
 body {
   border-top: 4px solid #000;
 }
 
-/* line 6, ../../scss/_layout.scss */
+/* line 6, ../scss/_layout.scss */
 aside.left {
   width: 200px;
   background: #fcfcfc;
@@ -85,29 +85,29 @@ aside.left {
   height: 100%;
   position: absolute;
 }
-/* line 13, ../../scss/_layout.scss */
+/* line 13, ../scss/_layout.scss */
 aside.left .module {
   width: 100%;
   margin-bottom: 20px;
   clear: both;
 }
-/* line 19, ../../scss/_layout.scss */
+/* line 19, ../scss/_layout.scss */
 aside.left .module .inner ul#lists {
   overflow-x: scroll;
 }
-/* line 22, ../../scss/_layout.scss */
+/* line 22, ../scss/_layout.scss */
 aside.left .module .inner ul li {
   width: 100%;
   line-height: 30px;
   border-bottom: 1px solid #ededed;
 }
-/* line 26, ../../scss/_layout.scss */
+/* line 26, ../scss/_layout.scss */
 aside.left .module .inner ul li input[type="text"] {
   padding: 3px 55px 3px 5px;
   margin: 0px 10px;
   border: 1px #DDD solid;
 }
-/* line 31, ../../scss/_layout.scss */
+/* line 31, ../scss/_layout.scss */
 aside.left .module .inner ul li a {
   color: black;
   text-decoration: none;
@@ -116,7 +116,7 @@ aside.left .module .inner ul li a {
   text-align: left;
   font-size: 12px;
 }
-/* line 40, ../../scss/_layout.scss */
+/* line 40, ../scss/_layout.scss */
 aside.left .module .inner ul li a.delete {
   display: none;
   float: right;
@@ -127,20 +127,20 @@ aside.left .module .inner ul li a.delete {
   text-align: left;
   font-size: 14px;
 }
-/* line 51, ../../scss/_layout.scss */
+/* line 51, ../scss/_layout.scss */
 aside.left .module .inner ul li:hover {
   background: #ededed;
 }
-/* line 53, ../../scss/_layout.scss */
+/* line 53, ../scss/_layout.scss */
 aside.left .module .inner ul li:hover span.count {
   color: #cfcfcf;
   display: none;
 }
-/* line 57, ../../scss/_layout.scss */
+/* line 57, ../scss/_layout.scss */
 aside.left .module .inner ul li:hover a.delete {
   display: block;
 }
-/* line 61, ../../scss/_layout.scss */
+/* line 61, ../scss/_layout.scss */
 aside.left .module .inner ul li span.count {
   float: right;
   padding-right: 10px;
@@ -149,24 +149,73 @@ aside.left .module .inner ul li span.count {
   font-weight: 300;
   font-size: 14px;
 }
-/* line 76, ../../scss/_layout.scss */
+/* line 76, ../scss/_layout.scss */
 aside.left .module.top .header h1 {
   color: #dedede;
   text-align: center;
 }
-/* line 82, ../../scss/_layout.scss */
+/* line 82, ../scss/_layout.scss */
 aside.left .module.bottom {
   margin-bottom: 0px;
   bottom: 0;
   position: absolute;
   border-top: 1px solid #ededed;
 }
-/* line 89, ../../scss/_layout.scss */
+/* line 89, ../scss/_layout.scss */
 aside.left .module.bottom ul li a {
   padding-right: 120px;
 }
 
-/* line 1, ../../scss/_modal.scss */
+/* line 99, ../scss/_layout.scss */
+#content {
+  float: left;
+  width: 100%;
+}
+/* line 102, ../scss/_layout.scss */
+#content #tasks {
+  padding: 10px;
+  margin-left: 200px;
+}
+/* line 105, ../scss/_layout.scss */
+#content #tasks h3 {
+  text-align: center;
+  margin: 30px 0px 5px 0px;
+}
+/* line 109, ../scss/_layout.scss */
+#content #tasks li {
+  border-bottom: 1px #eee solid;
+}
+/* line 111, ../scss/_layout.scss */
+#content #tasks li.completed {
+  text-decoration: line-through !important;
+}
+/* line 114, ../scss/_layout.scss */
+#content #tasks li input[type="text"] {
+  padding: 5px 10px;
+  border: 1px #ddd solid;
+  margin: 10px 0px;
+  width: 98%;
+}
+/* line 121, ../scss/_layout.scss */
+#content #tasks li span.checkbox {
+  border-right: 1px #eee dotted;
+  margin-right: 5px;
+}
+/* line 126, ../scss/_layout.scss */
+#content #tasks li span.star {
+  float: right;
+}
+/* line 128, ../scss/_layout.scss */
+#content #tasks li span.star.yellow a {
+  color: gold !important;
+}
+/* line 133, ../scss/_layout.scss */
+#content #tasks li span.star a {
+  color: black !important;
+  text-decoration: none;
+}
+
+/* line 1, ../scss/_modal.scss */
 .modal-backdrop {
   position: absolute;
   top: 0px;
@@ -178,7 +227,7 @@ aside.left .module.bottom ul li a {
   filter: alpha(opacity=80);
 }
 
-/* line 12, ../../scss/_modal.scss */
+/* line 12, ../scss/_modal.scss */
 .modal {
   display: none;
   position: fixed;
@@ -190,22 +239,27 @@ aside.left .module.bottom ul li a {
   background-color: #ffffff;
 }
 
-/* line 7, ../../scss/_base.scss */
+/* line 7, ../scss/_base.scss */
 body, p {
   font-family: 'Vollkorn', Georgia, Times, serif;
   font-size: 16px;
   line-height: 25px;
 }
 
-/* line 14, ../../scss/_base.scss */
+/* line 14, ../scss/_base.scss */
 h1,
 aside {
   font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
 }
 
-/* line 18, ../../scss/_base.scss */
+/* line 18, ../scss/_base.scss */
 h1 {
   font-size: 50px;
   line-height: 65px;
   font-weight: bold;
+}
+
+/* line 24, ../scss/_base.scss */
+.hide {
+  display: none;
 }

@@ -31,10 +31,17 @@
         </div>
       </div>
     </aside>
-    <div id="modal-add-new-list" class="modal">
-      <h1>Add new list modal</h1>
-      <input type="text" id="list-title" />
-      <a class="hide-modal" href="#" data-modal="add-new-list">Hide</a>
+    <div id="content">
+      <div id="tasks" class="hide">
+        <ul>
+          <li>
+            <input type="text" id="task-title" />
+          </li>
+        </ul>
+        <ul class="tasks"></ul>
+        <h3>Done</h3>
+        <ul class="dones"></ul>
+      </div>
     </div>
   </section>
   <script data-main="js/main.js" src="js/vendor/require.js"></script>

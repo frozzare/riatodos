@@ -95,3 +95,50 @@ aside {
     }
   }
 }
+
+#content {
+  float: left;
+  width: 100%;
+  #tasks {
+    padding: 10px;
+    margin-left: $asideLeftWidth;
+    h3 {
+      text-align: center;
+      margin: 30px 0px 5px 0px;
+    }
+    li {
+      border-bottom: 1px #eee solid;
+      &.completed {
+        text-decoration: line-through !important;
+      }
+      input[type="text"] {
+        padding: 5px 10px;
+        border: 1px #ddd solid;
+        margin: 10px 0px;
+        width: 98%;
+      }
+      span {
+        &.checkbox {
+          border-right: 1px #eee dotted;
+          margin-right: 5px;
+        }
+        &.text {        }
+        &.star {
+          &.yellow {
+            a {
+              color: gold !important;
+            }
+          }
+          float: right;
+          a {
+            color: black !important;
+            text-decoration: none;
+            &:hover {
+
+            }
+          }
+        }
+      }
+    }
+  }
+}

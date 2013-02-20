@@ -2,9 +2,11 @@ define([
   'jquery',
   'underscore',
   'backbone',
+  'models/listtask',
+  'collections/tasks',
   'collections/subtasks',
   'models/subtask'
-], function ($, _, Backbone, SubTasksCollection, SubTaskModel) {
+], function ($, _, Backbone, ListTaskModel, Tasks, SubTasksCollection, SubTaskModel) {
 
   /**
    * Initalize Task model
@@ -17,26 +19,21 @@ define([
       due_date: null,
       created: +new Date,
       created_by: null,
-      completed: false
+      completed: false,
+      star: false
     },
-
+/*
     relations: [{
       type: Backbone.HasMany,
-      key: 'subtasks',
-      relatedModel: SubTaskModel,
-      collectionType: SubTasksCollection,
+      key: 'lists',
+      relatedModel: ListTaskModel,
       reverseRelation: {
-        key: 'subtask',
-        includeInJSON: 'id'
+        key: 'list'
       }
     }],
-
+*/
     initialize: function () {
-      if (!this.get('title')) {
-        this.set({
-          title: this.defaults().title
-        });
-      }
+
     },
 
     toggle: function () {
@@ -45,10 +42,14 @@ define([
       });
     },
 
+    toggleStar: function () {
+      this.save({
+        star: !this.get('star')
+      });
+    },
+
     validate: function (task) {
-      var error = "Something when't wrong";
-      if (!task.title) error = 'Title is required';
-      return error;
+
     }
 
   });

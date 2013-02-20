@@ -24,6 +24,7 @@ define([
       this.listenTo(Lists, 'add', this.addOne);
       this.listenTo(Lists, 'reset', this.addAll);
       Lists.fetch();
+      window.Lists = Lists;
     },
 
     /**

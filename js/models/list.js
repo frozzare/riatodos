@@ -22,12 +22,13 @@ define([
       relatedModel: TaskModel,
       collectionType: Tasks.Collection,
       reverseRelation: {
-        key: 'task',
+        key: 'list',
         includeInJSON: 'id'
       }
     }],
 
     initalize: function () {
+      this.fetchRelated('tasks');
     }
 
   });

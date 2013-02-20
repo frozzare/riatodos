@@ -60,6 +60,9 @@ define([
 
   });
 
+  // Need the Collection reference for Backbone Relational
+  SubTasksCollection.prototype.Collection = SubTasksCollection;
+
   return new SubTasksCollection();
 
 });

@@ -2,20 +2,20 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'models/task'
-], function ($, _, Backbone, Task) {
+  'models/listtask'
+], function ($, _, Backbone, ListTask) {
 
   /**
    * Create new Tasks collection.
    */
 
-  var TasksCollection = Backbone.Collection.extend({
+  var ListTasksCollection = Backbone.Collection.extend({
 
     /**
      * Set model to `Task`.
      */
 
-    model: Task,
+    model: ListTask,
 
     /**
      * localStorage support.
@@ -51,17 +51,17 @@ define([
     },
 
     /**
-     * Tasks are sorted by star attribute.
+     * Tasks are sorted by their original insertion order.
      */
 
     comparator: function (task) {
-      return !task.get('star');
+      return task.get('order');
     }
 
   });
 
   // Need the Collection reference for Backbone Relational
-  TasksCollection.prototype.Collection = TasksCollection;
+  ListTasksCollection.prototype.Collection = ListTasksCollection;
 
-  return new TasksCollection();
+  return new ListTasksCollection();
 });
