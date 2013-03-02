@@ -3,8 +3,9 @@ define([
   'underscore',
   'backbone',
   'collections/lists',
-  'views/listview'
-], function ($, _, Backbone, Lists, ListView) {
+  'views/listview',
+  'views/taskview'
+], function ($, _, Backbone, Lists, ListView, TaskView) {
 
   var AppView = Backbone.View.extend({
 
@@ -12,7 +13,8 @@ define([
 
     events: {
       'click .add-new-list': 'addNewList',
-      'keypress #list-name': 'addList'
+      'keypress #list-name': 'addList',
+
     },
 
     /**
@@ -39,8 +41,17 @@ define([
      */
 
     addOne: function (list) {
-      var view = new ListView({ model: list });
-      this.$lists.append(view.render().el);
+      var self = this
+        , view = new ListView({ model: list });
+
+      view = view.render();
+
+      this.$lists.append(view.el);
+
+      view.$el.on('click', function (e) {
+        var view = new TaskView({ list: list });
+        self.$el.find('#content').html('').append(view.render().el);
+      });
     },
 
     /**

@@ -4,48 +4,73 @@ define([
   'backbone',
   'models/task',
   'collections/tasks',
-  'text!templates/task-item.html'
-], function ($, _, Backbone, Task, TaskCollection, taskTemplate) {
+  'views/taskitemview'
+], function ($, _, Backbone, Task, Tasks, TaskItemView) {
 
   var TaskView = Backbone.View.extend({
 
-    tagName: 'li',
+    id: 'tasks',
 
-    template: _.template(taskTemplate),
+    tagName: 'div',
 
-    events: {
-      'change input[type="checkbox"]': 'toggleDone',
-      'click .star a': 'toggleStar'
-    },
+    events: {},
 
-    initalize: function () {
-
+    initialize: function (attr) {
+      var self = this;
+      this.list = attr.list;
+      this.$el.html('<ul><li><input type="text" id="task-title"></li></ul><ul class="tasks"></ul><h3>Done</h3><ul class="dones"></ul>');
+      this.$el.find('#task-title').attr('placeholder', 'Add new task to "' + this.list.get('title') + '"');
+      this.$tasks = this.$el.find('ul.tasks');
+      this.$dones = this.$el.find('ul.dones');
+      this.$el.on('keypress', '#task-title', function (e) {
+        return self.addTask.call(self, e);
+      });
+      this.tasks = this.list.get('tasks');
+      this.listenTo(this.tasks, 'add', this.addOne);
+      this.listenTo(this.tasks, 'reset', this.addAll);
+      this.tasks.fetch();
     },
 
     render: function () {
-      if (this.model.get('completed')) {
-        this.$el.addClass('completed');
-      }
-      this.$el.html(this.template(this.model.toJSON()));
       return this;
     },
 
-    toggleDone: function () {
-      this.model.toggle();
-      this.$el.toggleClass('completed');
-      if (this.model.get('completed')) {
-        this.model.save({ star: false });
-        this.$el.find('span.star').addClass('hide');
+    /**
+     * Add one task.
+     */
+
+    addOne: function (task) {
+      var view = new TaskItemView({ model: task });
+      view = view.render().el;
+      if (task.get('completed')) {
+        this.$dones.append(view);
       } else {
-        this.$el.find('span.star').removeClass('hide');
+        this.$tasks.append(view);
       }
-      $(this.model.get('completed') ? '.dones' : '.tasks').append(this.$el);
     },
 
-    toggleStar: function () {
-      this.model.toggleStar();
-      this.$el.find('.star').toggleClass('yellow');
-      $('.tasks')[this.model.get('star') ? 'prepend' : 'append'](this.$el);
+    /**
+     * Add all tasks.
+     */
+
+    addAll: function () {
+      this.$tasks.html('');
+      this.$dones.html('');
+      this.tasks.each(this.addOne, this);
+    },
+
+    /**
+     * Add task on enter key press.
+     */
+
+    addTask: function (e) {
+      var elm = this.$el.find('#task-title')
+        , val = elm.val();
+
+      if (e.which !== 13 || !val.trim()) return;
+
+      this.tasks.create({ title: val });
+      elm.val('');
     }
 
   });
