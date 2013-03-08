@@ -3,9 +3,8 @@ define([
   'underscore',
   'backbone',
   'models/task',
-  'collections/tasks',
   'views/taskitemview'
-], function ($, _, Backbone, Task, Tasks, TaskItemView) {
+], function ($, _, Backbone, Task, TaskItemView) {
 
   var TaskView = Backbone.View.extend({
 
@@ -26,9 +25,7 @@ define([
         return self.addTask.call(self, e);
       });
       this.tasks = this.list.get('tasks');
-      this.listenTo(this.tasks, 'add', this.addOne);
-      this.listenTo(this.tasks, 'reset', this.addAll);
-      this.tasks.fetch();
+      this.drawAll();
     },
 
     render: function () {
@@ -36,10 +33,10 @@ define([
     },
 
     /**
-     * Add one task.
+     * Draw one task.
      */
 
-    addOne: function (task) {
+    drawOne: function (task) {
       var view = new TaskItemView({ model: task });
       view = view.render().el;
       if (task.get('completed')) {
@@ -50,13 +47,13 @@ define([
     },
 
     /**
-     * Add all tasks.
+     * Draw all tasks.
      */
 
-    addAll: function () {
+    drawAll: function () {
       this.$tasks.html('');
       this.$dones.html('');
-      this.tasks.each(this.addOne, this);
+      this.list.get("tasks").each(this.drawOne, this);
     },
 
     /**
@@ -68,9 +65,13 @@ define([
         , val = elm.val();
 
       if (e.which !== 13 || !val.trim()) return;
-
-      this.tasks.create({ title: val });
+      var newtask = new Task({title:val});
+      //tasks.add(newtask);
+      this.list.get("tasks").add(newtask);
+      newtask.save();
+      this.list.save();
       elm.val('');
+      this.drawOne(newtask);
     }
 
   });
