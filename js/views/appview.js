@@ -10,8 +10,8 @@ define([
     el: 'body',
 
     events: {
-      'click .add-new-list': 'addNewList',
-      'keypress #list-name': 'addList',
+      'click .add-new-list': 'addNewListInput',
+      'keypress #list-name': 'addNewList',
 
     },
 
@@ -21,8 +21,8 @@ define([
 
     initialize: function () {
       this.$lists = this.$('#lists');
-      this.listenTo(Lists, 'add', this.addOne);
-      this.listenTo(Lists, 'reset', this.addAll);
+      this.listenTo(Lists, 'add', this.drawOne);
+      this.listenTo(Lists, 'reset', this.drawAll);
       Lists.fetch();
     },
 
@@ -37,7 +37,7 @@ define([
      * Add one list.
      */
 
-    addOne: function (list) {
+    drawOne: function (list) {
       var self = this
         , view = new ListItemView({ model: list });
 
@@ -55,16 +55,16 @@ define([
      * Add all lists.
      */
 
-    addAll: function () {
+    drawAll: function () {
       this.$lists.html('');
-      Lists.each(this.addOne, this);
+      Lists.each(this.drawOne, this);
     },
 
     /**
      * Append new list input.
      */
 
-    addNewList: function () {
+    addNewListInput: function () {
       if (this.$lists.find('#list-name').length) return;
       this.$lists.append('<li><input id="list-name" value="New list" type="text"></li>');
     },
@@ -73,7 +73,7 @@ define([
      * Add list on enter key press.
      */
 
-    addList: function (e) {
+    addNewList: function (e) {
       var elm = $('#list-name')
         , val = elm.val();
 
