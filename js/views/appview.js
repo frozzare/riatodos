@@ -1,9 +1,9 @@
 define([
   'backbone',
   'collections/lists',
-  'views/listview',
-  'views/taskview'
-], function (Backbone, Lists, ListView, TaskView) {
+  'views/listitemview',
+  'views/listview'
+], function (Backbone, Lists, ListItemView, ListView) {
 
   var AppView = Backbone.View.extend({
 
@@ -39,14 +39,14 @@ define([
 
     addOne: function (list) {
       var self = this
-        , view = new ListView({ model: list });
+        , view = new ListItemView({ model: list });
 
       view = view.render();
 
       this.$lists.append(view.el);
 
       view.$el.on('click', function (e) {
-        var view = new TaskView({ list: list });
+        var view = new ListView({ list: list });
         self.$el.find('#content').html('').append(view.render().el);
       });
     },

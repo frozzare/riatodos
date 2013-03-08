@@ -1,52 +1,78 @@
 define([
-  'underscore',
   'backbone',
-  'text!templates/aside-list.html',
-  'views/taskview'
-], function (_, Backbone, asideList, TaskView) {
+  'models/task',
+  'views/taskitemview'
+], function (Backbone, Task, TaskItemView) {
 
-  var ListView = Backbone.View.extend({
+  var TaskView = Backbone.View.extend({
 
-    tagName: 'li',
+    id: 'tasks',
 
-    template: _.template(asideList),
-
-    /**
-     * Events.
-     */
+    tagName: 'div',
 
     events: {
-      'click .delete': 'deleteList',
+      'keypress #task-title': 'addTask'
     },
 
-    /**
-     * Initalize list view.
-     */
-
-    initialize: function () {
-       this.listenTo(this.model,"change:tasks",this.render,this);
+    initialize: function (attr) {
+      var self = this;
+      this.list = attr.list;
+      this.$el.html('<ul><li><input type="text" id="task-title"></li></ul><ul class="tasks"></ul><h3>Done</h3><ul class="dones"></ul>');
+      this.$el.find('#task-title').attr('placeholder', 'Add new task to "' + this.list.get('title') + '"');
+      this.$tasks = this.$el.find('ul.tasks');
+      this.$dones = this.$el.find('ul.dones');
+      this.tasks = this.list.get('tasks');
+      this.drawAll();
     },
-
-    /**
-     * Render list.
-     */
 
     render: function () {
-      this.$el.html(this.template(this.model.toJSON()));
       return this;
     },
 
     /**
-     * Delete list.
+     * Draw one task.
      */
 
-    deleteList: function (e) {
-      this.model.destroy();
-      this.$(e.target).closest('li').slideUp();
+    drawOne: function (task) {
+      var view = new TaskItemView({ model: task });
+      view = view.render().el;
+      if (task.get('completed')) {
+        this.$dones.append(view);
+      } else {
+        this.$tasks.append(view);
+      }
+    },
+
+    /**
+     * Draw all tasks.
+     */
+
+    drawAll: function () {
+      this.$tasks.html('');
+      this.$dones.html('');
+      this.list.get("tasks").each(this.drawOne, this);
+    },
+
+    /**
+     * Add task on enter key press.
+     */
+
+    addTask: function (e) {
+      var elm = this.$el.find('#task-title')
+        , val = elm.val();
+
+      if (e.which !== 13 || !val.trim()) return;
+      var newtask = new Task({title:val});
+      //tasks.add(newtask);
+      this.list.get("tasks").add(newtask);
+      newtask.save();
+      this.list.save();
+      elm.val('');
+      this.drawOne(newtask);
     }
 
   });
 
-  return ListView;
+  return TaskView;
 
 });
