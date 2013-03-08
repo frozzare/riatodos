@@ -3,9 +3,8 @@ define([
   'underscore',
   'backbone',
   'models/task',
-  'collections/tasks',
   'views/taskitemview'
-], function ($, _, Backbone, Task, tasks, TaskItemView) {
+], function ($, _, Backbone, Task, TaskItemView) {
 
   var TaskView = Backbone.View.extend({
 
@@ -67,7 +66,7 @@ define([
 
       if (e.which !== 13 || !val.trim()) return;
       var newtask = new Task({title:val});
-      tasks.add(newtask);
+      //tasks.add(newtask);
       this.list.get("tasks").add(newtask);
       newtask.save();
       this.list.save();
