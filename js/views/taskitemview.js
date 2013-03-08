@@ -33,10 +33,8 @@ define([
       this.$el.toggleClass('completed');
       if (this.model.get('completed')) {
         this.model.save({ star: false });
-        this.$el.find('span.star').addClass('hide');
-      } else {
-        this.$el.find('span.star').removeClass('hide');
       }
+      this.$el.find('span.star').toggleClass('hide');
       $(this.model.get('completed') ? '.dones' : '.tasks').append(this.$el);
     },
 
