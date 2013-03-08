@@ -17,10 +17,6 @@ define([
       star: false
     },
 
-    initialize: function () {
-
-    },
-
     toggle: function () {
       this.save({
         completed: !this.get('completed')
@@ -31,10 +27,6 @@ define([
       this.save({
         star: !this.get('star')
       });
-    },
-
-    validate: function (task) {
-
     }
 
   });
