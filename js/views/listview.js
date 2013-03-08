@@ -1,0 +1,54 @@
+define([
+  'jquery',
+  'underscore',
+  'backbone',
+  'collections/lists',
+  'text!templates/aside-list.html',
+  'views/taskview'
+], function ($, _, Backbone, Lists, asideList, TaskView) {
+
+  var ListView = Backbone.View.extend({
+
+    tagName: 'li',
+
+    template: _.template(asideList),
+
+    /**
+     * Events.
+     */
+
+    events: {
+      'click .delete': 'deleteList',
+    },
+
+    /**
+     * Initalize list view.
+     */
+
+    initialize: function () {
+
+    },
+
+    /**
+     * Render list.
+     */
+
+    render: function () {
+      this.$el.html(this.template(this.model.toJSON()));
+      return this;
+    },
+
+    /**
+     * Delete list.
+     */
+
+    deleteList: function (e) {
+      this.model.destroy();
+      this.$(e.target).closest('li').slideUp();
+    }
+
+  });
+
+  return ListView;
+
+});

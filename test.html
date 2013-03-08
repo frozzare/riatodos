@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style>
+    .modal-backdrop {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      height: 100%;
+      width: 100%;
+      background-color: black;
+      opacity: 0.8;
+      filter: alpha(opacity=80);
+    }
+    
+    .modal {
+      display: none;
+      position: fixed;
+      top: 10%;
+      left: 50%;
+      z-index: 1050;
+      width: 560px;
+      margin-left: -280px;
+      background-color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+  <a href="#" class="show">Show</a>
+  <div class="modal">
+    <a href="#" class="hide">Hide</a>
+  </div>
+  <script src="public/js/vendor/tire/tire.js"></script>
+  <!--<script src="public/js/vendor/jquery/dist/jquery.js"></script>-->
+  <script src="public/js/lib/jquery.modal.js"></script>
+  <script src="public/js/test.js"></script>
+</body>
+</html>
