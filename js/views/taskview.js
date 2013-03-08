@@ -10,7 +10,9 @@ define([
 
     tagName: 'div',
 
-    events: {},
+    events: {
+      'keypress #task-title': 'addTask'
+    },
 
     initialize: function (attr) {
       var self = this;
@@ -19,9 +21,6 @@ define([
       this.$el.find('#task-title').attr('placeholder', 'Add new task to "' + this.list.get('title') + '"');
       this.$tasks = this.$el.find('ul.tasks');
       this.$dones = this.$el.find('ul.dones');
-      this.$el.on('keypress', '#task-title', function (e) {
-        return self.addTask.call(self, e);
-      });
       this.tasks = this.list.get('tasks');
       this.drawAll();
     },
