@@ -1,11 +1,9 @@
 define([
-  'jquery',
-  'underscore',
   'backbone',
   'collections/lists',
   'views/listview',
   'views/taskview'
-], function ($, _, Backbone, Lists, ListView, TaskView) {
+], function (Backbone, Lists, ListView, TaskView) {
 
   var AppView = Backbone.View.extend({
 

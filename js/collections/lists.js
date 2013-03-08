@@ -1,10 +1,7 @@
 define([
-  'jquery',
-  'underscore',
   'backbone',
-  'models/list',
-  'collections/tasks'
-], function ($, _, Backbone, List, Tasks) {
+  'models/list'
+], function (Backbone, List) {
 
   /**
    * Create new Lists collection.

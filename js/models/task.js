@@ -2,11 +2,8 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'models/listtask',
   'collections/tasks',
-  'collections/subtasks',
-  'models/subtask'
-], function ($, _, Backbone, ListTaskModel, Tasks, SubTasksCollection, SubTaskModel) {
+], function ($, _, Backbone, Tasks) {
 
   /**
    * Initalize Task model
@@ -22,16 +19,7 @@ define([
       completed: false,
       star: false
     },
-/*
-    relations: [{
-      type: Backbone.HasMany,
-      key: 'lists',
-      relatedModel: ListTaskModel,
-      reverseRelation: {
-        key: 'list'
-      }
-    }],
-*/
+
     initialize: function () {
 
     },

@@ -3,9 +3,8 @@ define([
   'underscore',
   'backbone',
   'models/task',
-  'collections/tasks',
   'text!templates/task-item.html'
-], function ($, _, Backbone, Task, TaskCollection, taskTemplate) {
+], function ($, _, Backbone, Task, taskTemplate) {
 
   var TaskItemView = Backbone.View.extend({
 

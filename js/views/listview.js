@@ -1,8 +1,9 @@
 define([
+  'underscore',
   'backbone',
   'text!templates/aside-list.html',
   'views/taskview'
-], function (Backbone, asideList, TaskView) {
+], function (_, Backbone, asideList, TaskView) {
 
   var ListView = Backbone.View.extend({
 

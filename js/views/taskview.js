@@ -1,10 +1,8 @@
 define([
-  'jquery',
-  'underscore',
   'backbone',
   'models/task',
   'views/taskitemview'
-], function ($, _, Backbone, Task, TaskItemView) {
+], function (Backbone, Task, TaskItemView) {
 
   var TaskView = Backbone.View.extend({
 
