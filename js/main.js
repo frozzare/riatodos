@@ -4,7 +4,7 @@ require.config({
 
     // Vendors
 
-    // jQuery + plugins
+    // jQuery
     jquery: 'vendor/jquery/dist/jquery',
 
     // Underscore + Backbone
@@ -35,6 +35,6 @@ require.config({
   }
 });
 
-require(['app'], function (App) {
-  App.initalize();
+require(['views/appview'], function (AppView) {
+  new AppView();
 });
