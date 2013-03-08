@@ -1,9 +1,6 @@
 define([
-  'jquery',
-  'underscore',
-  'backbone',
-  'collections/tasks',
-], function ($, _, Backbone, Tasks) {
+  'backbone'
+], function (Backbone) {
 
   /**
    * Initalize Task model

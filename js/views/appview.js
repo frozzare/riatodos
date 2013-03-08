@@ -3,7 +3,7 @@ define([
   'collections/lists',
   'views/listitemview',
   'views/listview'
-], function (Backbone, Lists, ListItemView, ListView) {
+], function (Backbone, lists, ListItemView, ListView) {
 
   var AppView = Backbone.View.extend({
 
@@ -21,9 +21,9 @@ define([
 
     initialize: function () {
       this.$lists = this.$('#lists');
-      this.listenTo(Lists, 'add', this.drawOne);
-      this.listenTo(Lists, 'reset', this.drawAll);
-      Lists.fetch();
+      this.listenTo(lists, 'add', this.drawOne);
+      this.listenTo(lists, 'reset', this.drawAll);
+      lists.fetch();
     },
 
     /**
@@ -57,7 +57,7 @@ define([
 
     drawAll: function () {
       this.$lists.html('');
-      Lists.each(this.drawOne, this);
+      lists.each(this.drawOne, this);
     },
 
     /**
@@ -79,7 +79,7 @@ define([
 
       if (e.which !== 13 || !val.trim()) return;
 
-      Lists.create({ title: val });
+      lists.create({ title: val });
       elm.parent().remove();
     }
 

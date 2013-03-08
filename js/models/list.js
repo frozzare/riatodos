@@ -2,7 +2,7 @@ define([
   'backbone',
   'collections/tasks',
   'models/task'
-], function (Backbone, Tasks, TaskModel) {
+], function (Backbone, tasks, TaskModel) {
 
   /**
    * Initalize List model
@@ -18,7 +18,7 @@ define([
       type: Backbone.HasMany,
       key: 'tasks',
       relatedModel: TaskModel,
-      collectionType: Tasks.Collection,
+      collectionType: tasks.Collection,
       reverseRelation: {
         key: 'list',
         includeInJSON: 'id'
