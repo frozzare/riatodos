@@ -26,7 +26,7 @@ define([
      */
 
     initialize: function () {
-
+       this.listenTo(this.model,"change:tasks",this.render,this);
     },
 
     /**
