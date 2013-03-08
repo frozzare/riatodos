@@ -45,6 +45,7 @@ define([
       this.model.toggleStar();
       this.$el.find('.star').toggleClass('yellow');
       $('.tasks')[this.model.get('star') ? 'prepend' : 'append'](this.$el);
+      this.model.save();
     }
 
   });
