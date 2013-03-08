@@ -27,13 +27,6 @@ define([
     },
 
     /**
-     * Render app view.
-     */
-
-    render: function () {
-    },
-
-    /**
      * Add one list.
      */
 

@@ -41,7 +41,9 @@ define([
 
     deleteList: function (e) {
       this.model.destroy();
-      this.$(e.target).closest('li').slideUp();
+      this.$(e.target).closest('li').slideUp(function () {
+        $(this).remove();
+      });
     }
 
   });
